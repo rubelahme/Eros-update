@@ -1,0 +1,69 @@
+.Login {
+  width: 100%;
+  padding: 20px;
+  background-color: #000;
+  border-radius: 5px;
+}
+.login-account {
+  color: #fff;
+  margin-top: 5px;
+  margin-bottom: 44px;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.form-check-input:checked {
+  background-color: #efbe00 !important;
+  color: #fff !important;
+}
+.Remember {
+  color: #fff;
+  cursor: pointer;
+}
+.forgot {
+  color: #efbe00;
+  cursor: pointer;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+.log {
+  margin-top: 22px;
+  border: 2px solid #efbe00 !important;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  color: #efbe00 !important;
+  background-color: #000 !important;
+}
+.log:hover {
+  background-color: #efbf009d !important;
+}
+.Create-log {
+  margin-top: 20px;
+  border: 2px solid #fff !important;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  color: #fff !important;
+  background-color: #000 !important;
+  margin-bottom: 30px;
+}
+.Create-log:hover {
+  background-color: rgba(255, 255, 255, 0.589) !important;
+}
+.inputBar {
+  width: 100%;
+}
+.pos {
+  position: relative;
+}
+.logIcon {
+  position: absolute;
+  top: 17px;
+  right: 16px;
+  cursor: pointer;
+}

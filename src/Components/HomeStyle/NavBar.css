@@ -1,0 +1,60 @@
+.NavBar1 {
+  background-color: #000;
+}
+.eros {
+  color: rgb(248, 184, 6);
+  font-weight: 700;
+  font-weight: bold;
+  font-size: 25px;
+}
+.ads {
+  color: rgba(255, 255, 255, 0.967);
+  font-weight: 700;
+  font-size: 25px;
+}
+.item1 {
+  padding-right: 40px !important;
+  color: #8f8f8f !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+.item2 {
+  color: #8f8f8f !important;
+  font-weight: 500;
+  font-size: 14px;
+  padding-right: 40px !important;
+}
+.item3 {
+  color: #8f8f8f !important;
+  font-weight: 500;
+  font-size: 14px;
+  padding-right: 40px !important;
+}
+.item4 {
+  display: none !important;
+}
+.navbar-light .navbar-toggler {
+  border: 1px solid #fff;
+}
+.item444 {
+  color: #efbe00 !important;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.6;
+}
+.barsIcon {
+  color: #fff;
+  display: none !important;
+}
+@media only screen and (max-width: 992px) {
+  .menu {
+    display: none !important;
+  }
+  .barsIcon {
+    display: block !important;
+  }
+  .item4 {
+    display: block !important;
+    text-align: center;
+  }
+}

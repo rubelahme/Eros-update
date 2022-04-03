@@ -1,0 +1,65 @@
+.footer-list {
+  background-color: #000;
+}
+.ErosAds {
+  font-weight: 500;
+  font-size: 22px;
+  color: #fff;
+}
+.footer-item {
+  color: #fff;
+  font-size: 14px;
+}
+.Contact {
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.Contact:hover {
+  color: rgb(243, 185, 23);
+  cursor: pointer;
+}
+
+.footer-About {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+}
+.footer-About:hover {
+  color: rgb(243, 185, 23);
+  cursor: pointer;
+}
+.Customization {
+  color: #fff;
+  line-height: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.Trademarks {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.TrademarksIP {
+  color: rgb(243, 185, 23);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .Customization {
+    color: #fff;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .Trademarks {
+    margin-top: 5px;
+    margin-bottom: 40px;
+  }
+  .Contact {
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 400 !important;
+  }
+}
