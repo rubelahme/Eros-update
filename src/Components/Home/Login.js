@@ -8,12 +8,10 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const [Icon, setIcon] = useState(true);
-
   const onSubmit = (data) => {
     const ItemId = {
       Email: data.example,
@@ -27,6 +25,8 @@ const Login = () => {
       .then((res) => res.json())
       .then((result) => console.log(result));
   };
+  console.log("");
+  console.log("");
 
   return (
     <>
