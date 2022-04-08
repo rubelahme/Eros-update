@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
 }
-.form-check-input:checked {
+.Remember:checked {
   background-color: #efbe00 !important;
   color: #fff !important;
 }

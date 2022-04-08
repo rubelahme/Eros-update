@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import "../HomeStyle/LogIn.css";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -11,8 +12,11 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
   const [Icon, setIcon] = useState(true);
   const onSubmit = (data) => {
+    navigate("/verify");
     const ItemId = {
       Email: data.example,
       Password: data.exampleRequired,
@@ -63,7 +67,7 @@ const Login = () => {
           <div className="d-flex justify-content-between">
             <div>
               <input
-                class="form-check-input btn-check-warning"
+                class="form-check-input  Remember btn-check-warning"
                 type="checkbox"
                 value="btn-check-warning"
                 id="flexCheckDefault"
