@@ -1,17 +1,36 @@
 import React from "react";
 
 const ImageId = (props) => {
-  const { img1, img2, img3 } = props.item;
+  const { img1, img2, img3, img4 } = props.item;
   return (
     <>
-      <div className="col-4">
-        <img className="img-fluid img1" src={img1} alt="" />
+      <div className="col-3">
+        <img
+          className="img-fluid img1"
+          src={`data:image/png;base64,${img1}`}
+          alt="img1"
+        />
       </div>
-      <div className="col-4">
-        <img className="img-fluid img1" src={img2} alt="" />
+      <div className="col-3">
+        <img
+          className="img-fluid img1"
+          src={`data:image/png;base64,${img2}`}
+          alt="img1"
+        />
       </div>
-      <div className="col-4">
-        <img className="img-fluid img1" src={img3} alt="" />
+      <div className="col-3">
+        <img
+          className="img-fluid img1"
+          src={`data:image/png;base64,${img3}`}
+          alt="img1"
+        />
+      </div>
+      <div className="col-3">
+        <img
+          className="img-fluid img1"
+          src={`data:image/png;base64,${img4}`}
+          alt="img1"
+        />
       </div>
     </>
   );

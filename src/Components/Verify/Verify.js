@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Verify.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Verify = () => {
@@ -10,66 +9,21 @@ const Verify = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [imageItem, setImageItem] = useState(null);
-  const [imageItemed, setImageItemed] = useState(null);
-  const [imageItems, setImageItems] = useState(null);
 
   let navigate = useNavigate();
 
   const onSubmit = (data) => {
-    const ImageItemData = {
-      img1: imageItem,
-      img3: imageItems,
-      img2: imageItemed,
-    };
-    fetch("https://shrouded-beach-70099.herokuapp.com/images", {
+    const formData = new FormData();
+    formData.append("img1", data.exampleReq[0]);
+    formData.append("img2", data.example[0]);
+    formData.append("img3", data.exampleRequired[0]);
+    formData.append("img4", data.exampleReqQ[0]);
+    fetch("https://shrouded-beach-70099.herokuapp.com/newImage", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(ImageItemData),
+      body: formData,
     })
       .then((res) => res.json())
       .then((result) => navigate("/IdVerify"));
-  };
-  const ImageUpload = (event) => {
-    const imageData = new FormData();
-    imageData.set("key", "3b61f7918dc1a39c2999937d1c16a97d");
-    imageData.append("image", event.target.files[0]);
-    axios
-      .post("https://api.imgbb.com/1/upload", imageData)
-      .then(function (response) {
-        setImageItem(response.data.data.image.url);
-      })
-      .catch(function (error) {
-        console.log("ahmed");
-      });
-  };
-
-  const ImageUploads = (event) => {
-    const imageData = new FormData();
-    imageData.set("key", "3b61f7918dc1a39c2999937d1c16a97d");
-    imageData.append("image", event.target.files[0]);
-    axios
-      .post("https://api.imgbb.com/1/upload", imageData)
-      .then(function (response) {
-        setImageItems(response.data.data.image.url);
-      })
-      .catch(function (error) {
-        console.log("ahmed");
-      });
-  };
-
-  const ImageUploaded = (event) => {
-    const imageData = new FormData();
-    imageData.set("key", "3b61f7918dc1a39c2999937d1c16a97d");
-    imageData.append("image", event.target.files[0]);
-    axios
-      .post("https://api.imgbb.com/1/upload", imageData)
-      .then(function (response) {
-        setImageItemed(response.data.data.image.url);
-      })
-      .catch(function (error) {
-        console.log("ahmed");
-      });
   };
 
   return (
@@ -97,10 +51,11 @@ const Verify = () => {
               </p>
               <div className="text-center">
                 <input
+                  accept="image/*"
                   className=" DefaultFile"
                   type={"file"}
                   {...register("exampleReq", { required: true })}
-                  onChange={ImageUpload}
+                  // onChange={ImageUpload}
                 />
               </div>
             </div>
@@ -110,10 +65,11 @@ const Verify = () => {
                 surface*
               </p>
               <input
+                accept="image/*"
                 className=" DefaultFile"
                 type={"file"}
                 {...register("example", { required: true })}
-                onChange={ImageUploads}
+                // onChange={ImageUploads}
               />
             </div>
             <div>
@@ -121,10 +77,26 @@ const Verify = () => {
                 Upload or take a selfie of your Government ID on a flat surface*
               </p>
               <input
+                accept="image/*"
                 className=" DefaultFile"
                 type={"file"}
                 {...register("exampleRequired", { required: true })}
-                onChange={ImageUploaded}
+                // onChange={ImageUploaded}
+              />
+            </div>
+            <div>
+              <p className="p-0 mb-1 UploadData">
+                Please upload a photo of yourself holding up a piece of paper
+                with your email address handwritten on the piece of paper along
+                with today's date. <br /> Your arm and hand holding the paper
+                must be fully visible in the photo*
+              </p>
+              <input
+                accept="image/*"
+                className=" DefaultFile"
+                type={"file"}
+                {...register("exampleReqQ", { required: true })}
+                // onChange={ImageUploaded}
               />
             </div>
             <div>

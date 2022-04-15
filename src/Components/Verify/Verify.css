@@ -44,6 +44,7 @@
 }
 .UploadData {
   font-weight: 500;
+  font-size: medium;
 }
 .RememberId {
   border: 1px solid red !important;
@@ -58,6 +59,9 @@
   }
   .LoginData {
     width: 90%;
+  }
+  .UploadData {
+    font-size: small;
   }
 }
 
@@ -75,5 +79,8 @@
   .identity {
     font-size: 13px;
     font-weight: 300;
+  }
+  .UploadData {
+    font-size: small;
   }
 }
