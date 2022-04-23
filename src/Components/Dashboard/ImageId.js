@@ -5,32 +5,16 @@ const ImageId = (props) => {
   return (
     <>
       <div className="col-3">
-        <img
-          className="img-fluid img1"
-          src={`data:image/png;base64,${img1}`}
-          alt="img1"
-        />
+        <img className="img-fluid p-3" src={img1} alt="img1" />
       </div>
       <div className="col-3">
-        <img
-          className="img-fluid img1"
-          src={`data:image/png;base64,${img2}`}
-          alt="img1"
-        />
+        <img className="img-fluid p-3" src={img2} alt="img2" />
       </div>
       <div className="col-3">
-        <img
-          className="img-fluid img1"
-          src={`data:image/png;base64,${img3}`}
-          alt="img1"
-        />
+        <img className="img-fluid p-3 " src={img3} alt="img3" />
       </div>
       <div className="col-3">
-        <img
-          className="img-fluid img1"
-          src={`data:image/png;base64,${img4}`}
-          alt="img1"
-        />
+        <img className="img-fluid p-3" src={img4} alt="img4" />
       </div>
     </>
   );

@@ -16,18 +16,17 @@ const Login = () => {
 
   const [Icon, setIcon] = useState(true);
   const onSubmit = (data) => {
-    navigate("/verify");
     const ItemId = {
       Email: data.example,
       Password: data.exampleRequired,
     };
-    fetch("https://shrouded-beach-70099.herokuapp.com/email", {
+    fetch("http://localhost:5000/email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(ItemId),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => navigate("/verify"));
   };
 
   return (

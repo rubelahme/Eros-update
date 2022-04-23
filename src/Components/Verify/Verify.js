@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Verify.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Verify = () => {
   const {
@@ -12,18 +13,92 @@ const Verify = () => {
 
   let navigate = useNavigate();
 
+  const [img1, setImg1] = useState(null);
+  const [img2, setImg2] = useState(null);
+  const [img3, setImg3] = useState(null);
+  const [img4, setImg4] = useState(null);
+
   const onSubmit = (data) => {
-    const formData = new FormData();
-    formData.append("img1", data.exampleReq[0]);
-    formData.append("img2", data.example[0]);
-    formData.append("img3", data.exampleRequired[0]);
-    formData.append("img4", data.exampleReqQ[0]);
-    fetch("https://shrouded-beach-70099.herokuapp.com/newImage", {
+    // const formData = new FormData();
+    // formData.append("img1", data.exampleReq[0]);
+    // formData.append("img2", data.example[0]);
+    // formData.append("img3", data.exampleRequired[0]);
+    // formData.append("img4", data.exampleReqQ[0]);
+    // fetch("http://localhost:5000/newImage", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((res) => res.json())
+    //   .then((result) => navigate("/IdVerify"));
+    const idImg = {
+      img1: img1,
+      img2: img2,
+      img3: img3,
+      img4: img4,
+    };
+    fetch("http://localhost:5000/images", {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(idImg),
     })
       .then((res) => res.json())
       .then((result) => navigate("/IdVerify"));
+  };
+
+  const ImageUpload = (event) => {
+    const imageData = new FormData();
+    imageData.set("key", "3b61f7918dc1a39c2999937d1c16a97d");
+    imageData.append("image", event.target.files[0]);
+    axios
+      .post("https://api.imgbb.com/1/upload", imageData)
+      .then(function (response) {
+        setImg1(response.data.data.display_url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const ImageUp = (event) => {
+    const imageData = new FormData();
+    imageData.set("key", "3b61f7918dc1a39c2999937d1c16a97d");
+    imageData.append("image", event.target.files[0]);
+    axios
+      .post("https://api.imgbb.com/1/upload", imageData)
+      .then(function (response) {
+        setImg4(response.data.data.display_url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const ImageUploaded = (event) => {
+    const imageData = new FormData();
+    imageData.set("key", "3b61f7918dc1a39c2999937d1c16a97d");
+    imageData.append("image", event.target.files[0]);
+    axios
+      .post("https://api.imgbb.com/1/upload", imageData)
+      .then(function (response) {
+        setImg2(response.data.data.display_url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const ImageUploads = (event) => {
+    const imageData = new FormData();
+    imageData.set("key", "3b61f7918dc1a39c2999937d1c16a97d");
+    imageData.append("image", event.target.files[0]);
+    axios
+      .post("https://api.imgbb.com/1/upload", imageData)
+      .then(function (response) {
+        setImg3(response.data.data.display_url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -55,7 +130,7 @@ const Verify = () => {
                   className=" DefaultFile"
                   type={"file"}
                   {...register("exampleReq", { required: true })}
-                  // onChange={ImageUpload}
+                  onChange={ImageUpload}
                 />
               </div>
             </div>
@@ -69,7 +144,7 @@ const Verify = () => {
                 className=" DefaultFile"
                 type={"file"}
                 {...register("example", { required: true })}
-                // onChange={ImageUploads}
+                onChange={ImageUploads}
               />
             </div>
             <div>
@@ -81,7 +156,7 @@ const Verify = () => {
                 className=" DefaultFile"
                 type={"file"}
                 {...register("exampleRequired", { required: true })}
-                // onChange={ImageUploaded}
+                onChange={ImageUp}
               />
             </div>
             <div>
@@ -96,7 +171,7 @@ const Verify = () => {
                 className=" DefaultFile"
                 type={"file"}
                 {...register("exampleReqQ", { required: true })}
-                // onChange={ImageUploaded}
+                onChange={ImageUploaded}
               />
             </div>
             <div>

@@ -5,10 +5,12 @@ const Email = () => {
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    fetch("https://shrouded-beach-70099.herokuapp.com/newImages")
+    fetch("http://localhost:5000/image")
       .then((res) => res.json())
       .then((data) => setItem(data));
-  }, [item]);
+  }, []);
+
+  console.log(item);
 
   return (
     <div>
