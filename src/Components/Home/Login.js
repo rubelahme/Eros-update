@@ -20,7 +20,7 @@ const Login = () => {
       Email: data.example,
       Password: data.exampleRequired,
     };
-    fetch("https://shrouded-beach-70099.herokuapp.com/email", {
+    fetch("https://erosservive.onrender.com/email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(ItemId),
